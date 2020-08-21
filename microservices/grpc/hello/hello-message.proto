@@ -1,0 +1,15 @@
+syntax="proto3";
+
+package hello;
+
+option go_package = "golang.source-fellows.com/samples/grpc/hello";
+
+import "google/protobuf/empty.proto";
+
+message HelloMessage {
+    string messageText = 1;
+}
+
+service HelloWorldService {
+    rpc sayHello(google.protobuf.Empty) returns (HelloMessage);
+}

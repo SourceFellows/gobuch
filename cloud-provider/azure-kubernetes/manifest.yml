@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: go-azure-sample
+  name: go-azure-sample
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: go-azure-sample
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: go-azure-sample
+    spec:
+      containers:
+      - image: trainingfellow.azurecr.io/go-azure-sample
+        name: go-azure-sample
+        resources: {}
+        ports:
+          - containerPort: 8080
+status: {}

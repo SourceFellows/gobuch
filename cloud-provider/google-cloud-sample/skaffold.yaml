@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2beta5
+kind: Config
+metadata:
+  name: google-cloud-sample
+build:
+  artifacts:
+    - image: google-cloud-sample
+  tagPolicy:
+    sha256: {}
+deploy:
+  kubectl:
+    manifests:
+      - deployment-manifest.yml
+      - service-manifest.yml

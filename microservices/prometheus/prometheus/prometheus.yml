@@ -1,0 +1,8 @@
+global:
+  scrape_interval:     5s
+  external_labels:
+    monitor: 'sample-monitor'
+scrape_configs:
+  - job_name: 'application'
+    static_configs:
+      - targets: ['application:8080']

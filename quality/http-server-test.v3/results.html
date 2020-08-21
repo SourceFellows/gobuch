@@ -1,0 +1,119 @@
+<html>
+
+<body>
+
+    <h1>Statische Rückgabe</h1>
+
+<pre>
+package main
+
+import (
+	"net/http"
+	_ "net/http/pprof"
+)
+
+type Result struct {
+	Name string
+}
+
+var bites = []byte("{}")
+
+func myHandler(writer http.ResponseWriter, req *http.Request) {
+
+	writer.Header().Add("Content-Type", "application/json")
+	writer.Write(bites)
+}
+
+func main() {
+	http.HandleFunc("/", myHandler)
+	http.ListenAndServe(":8080", nil)
+}
+</pre>
+
+    <table>
+        <tr>
+            <th colspan=2 bgcolor=white>Server Software:</th>
+            <td colspan=2 bgcolor=white></td>
+        </tr>
+        <tr>
+            <th colspan=2 bgcolor=white>Server Hostname:</th>
+            <td colspan=2 bgcolor=white>localhost</td>
+        </tr>
+        <tr>
+            <th colspan=2 bgcolor=white>Server Port:</th>
+            <td colspan=2 bgcolor=white>8080</td>
+        </tr>
+        <tr>
+            <th colspan=2 bgcolor=white>Document Path:</th>
+            <td colspan=2 bgcolor=white>/Kristian</td>
+        </tr>
+        <tr>
+            <th colspan=2 bgcolor=white>Document Length:</th>
+            <td colspan=2 bgcolor=white>2 bytes</td>
+        </tr>
+        <tr>
+            <th colspan=2 bgcolor=white>Concurrency Level:</th>
+            <td colspan=2 bgcolor=white>3</td>
+        </tr>
+        <tr>
+            <th colspan=2 bgcolor=white>Time taken for tests:</th>
+            <td colspan=2 bgcolor=white>0.401 seconds</td>
+        </tr>
+        <tr>
+            <th colspan=2 bgcolor=white>Complete requests:</th>
+            <td colspan=2 bgcolor=white>10000</td>
+        </tr>
+        <tr>
+            <th colspan=2 bgcolor=white>Failed requests:</th>
+            <td colspan=2 bgcolor=white>0</td>
+        </tr>
+        <tr>
+            <th colspan=2 bgcolor=white>Total transferred:</th>
+            <td colspan=2 bgcolor=white>1090000 bytes</td>
+        </tr>
+        <tr>
+            <th colspan=2 bgcolor=white>HTML transferred:</th>
+            <td colspan=2 bgcolor=white>20000 bytes</td>
+        </tr>
+        <tr>
+            <th colspan=2 bgcolor=white>Requests per second:</th>
+            <td colspan=2 bgcolor=white>24916.72</td>
+        </tr>
+        <tr>
+            <th colspan=2 bgcolor=white>Transfer rate:</th>
+            <td colspan=2 bgcolor=white>2652.27 kb/s received</td>
+        </tr>
+        <tr>
+            <th bgcolor=white colspan=4>Connnection Times (ms)</th>
+        </tr>
+        <tr>
+            <th bgcolor=white>&nbsp;</th>
+            <th bgcolor=white>min</th>
+            <th bgcolor=white>avg</th>
+            <th bgcolor=white>max</th>
+        </tr>
+        <tr>
+            <th bgcolor=white>Connect:</th>
+            <td bgcolor=white> 0</td>
+            <td bgcolor=white> 0</td>
+            <td bgcolor=white> 1</td>
+        </tr>
+        <tr>
+            <th bgcolor=white>Processing:</th>
+            <td bgcolor=white> 0</td>
+            <td bgcolor=white> 0</td>
+            <td bgcolor=white> 0</td>
+        </tr>
+        <tr>
+            <th bgcolor=white>Total:</th>
+            <td bgcolor=white> 0</td>
+            <td bgcolor=white> 0</td>
+            <td bgcolor=white> 1</td>
+        </tr>
+    </table>
+
+
+
+</body>
+
+</html>

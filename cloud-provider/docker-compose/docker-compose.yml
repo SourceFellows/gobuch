@@ -1,0 +1,16 @@
+version: '3'
+services:
+  sender-application:
+    build:
+      context: .
+      dockerfile: Dockerfile.sender
+    environment:
+      NATS_URL: "nats://nats-server:4222"
+  receiver-application:
+    build:
+      context: .
+      dockerfile: Dockerfile.receiver
+    environment:
+        NATS_URL: "nats://nats-server:4222"
+  nats-server:
+    image: nats

@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: gcloud-sample
+  name: gcloud-sample
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gcloud-sample
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: gcloud-sample
+    spec:
+      containers:
+      - image: minikube-gcloud-sample
+        name: gcloud-sample-service
+        imagePullPolicy: Never
+        resources: {}
+        ports:
+          - containerPort: 8080
+      - image: minio/minio
+        name: minio
+        args: ["server", "/data"]
+        volumeMounts:
+          - name: minio-storage
+            mountPath: /data
+      volumes:
+        - name: minio-storage
+          emptyDir: {}
+status: {}

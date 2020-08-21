@@ -1,0 +1,8 @@
+POST http://localhost:8080/customer HTTP/1.1
+content-type: application/json
+
+{
+    "ID": 2,
+    "Lastname": "Wurst"
+}
+

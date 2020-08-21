@@ -1,0 +1,13 @@
+version: '3'
+services:
+  application:
+    build: .
+    ports:
+      - 8080:8080
+  minio-server:
+    image: minio/minio
+    command: server /data
+    volumes:
+      - ./minio:/data
+    ports:
+      - 9000:9000
