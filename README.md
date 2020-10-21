@@ -11,16 +11,16 @@ Der aktuelle Stand befinden sich immer unter: https://github.com/SourceFellows/g
 Folgende Beispielprojekte sind in diesem Repository enthalten:
 
 * 1 Einführung
-    * [cplusplus](hello-world/cplusplus)
-    * [go](hello-world/go)
-    * [java](hello-world/java)
-    * [javascript](hello-world/javascript)
-    * [python](hello-world/python)
-    * [typescript](hello-world/typescript)
     * [hello-interface](hello-interface)
     * [hello-channel](hello-channel)
     * [hello-go-channel](hello-go-channel)
     * [hello-channel-post](hello-channel-post)
+    * [cplusplus](hello-world/cplusplus) - Compilierzeiten
+    * [go](hello-world/go) - Compilierzeiten
+    * [java](hello-world/java) - Compilierzeiten
+    * [javascript](hello-world/javascript) - Compilierzeiten
+    * [python](hello-world/python) - Compilierzeiten
+    * [typescript](hello-world/typescript) - Compilierzeiten
 
 * 2 Die Grundlagen von Go
     * [collection-array](go-language-sample/collection-array)
