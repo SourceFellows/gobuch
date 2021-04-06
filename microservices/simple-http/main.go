@@ -7,6 +7,6 @@ func handleHttp(res http.ResponseWriter, req *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/a/", handleHttp)
+	http.HandleFunc("/", handleHttp)
 	http.ListenAndServe(":8080", nil)
 }
